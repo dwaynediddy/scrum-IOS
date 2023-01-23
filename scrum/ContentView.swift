@@ -17,7 +17,7 @@ struct MeetingView: View {
                 Label("300", systemImage: "hourglass.bottomhalf.fill")
                 }
                 VStack {
-                    Text("Seconds Remaining")
+                    Text("Seconds Remaining test")
                     Label("600", systemImage:  "hourglass.tophalf.fill")
                 }
             }
