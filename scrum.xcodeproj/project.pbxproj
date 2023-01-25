@@ -16,6 +16,7 @@
 		158BAFE1297F99E500622C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158BAFE0297F99E500622C2D /* Assets.xcassets */; };
 		158BAFE3297F9C9600622C2D /* TrailingIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BAFE2297F9C9600622C2D /* TrailingIcon.swift */; };
 		158BAFE5297FA0C500622C2D /* ScrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158BAFE4297FA0C500622C2D /* ScrumView.swift */; };
+		15BBB669298120E800031DB6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BBB668298120E800031DB6 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		158BAFE0297F99E500622C2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		158BAFE2297F9C9600622C2D /* TrailingIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIcon.swift; sourceTree = "<group>"; };
 		158BAFE4297FA0C500622C2D /* ScrumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumView.swift; sourceTree = "<group>"; };
+		15BBB668298120E800031DB6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				158BAFDD297F982700622C2D /* MeetingView.swift */,
 				158BAFDB297F97B500622C2D /* CardView.swift */,
 				158BAFE4297FA0C500622C2D /* ScrumView.swift */,
+				15BBB668298120E800031DB6 /* DetailView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				158BAFDA297F968900622C2D /* DailyScrum.swift in Sources */,
+				15BBB669298120E800031DB6 /* DetailView.swift in Sources */,
 				158BAFE5297FA0C500622C2D /* ScrumView.swift in Sources */,
 				158BAFA5297F94C600622C2D /* Theme.swift in Sources */,
 				158BAFDE297F982700622C2D /* MeetingView.swift in Sources */,
