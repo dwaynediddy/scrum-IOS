@@ -37,7 +37,6 @@ struct DetailView: View {
             }
         }
     }
-        .navigationTitle(scrum.name)
 }
 
 struct DetailView_Previews: PreviewProvider {
