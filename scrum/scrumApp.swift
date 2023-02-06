@@ -8,12 +8,12 @@
 import SwiftUI
 
 @main
-struct scrumApp: App {
+struct ScrumApp: App {
     @State private var scrums = DailyScrum.sampleData
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ScrumView(scrums: $scrums)
+                ScrumsView(scrums: $scrums)
             }
         }
     }

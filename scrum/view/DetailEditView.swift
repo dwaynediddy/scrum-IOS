@@ -8,7 +8,7 @@ import SwiftUI
 
 struct DetailEditView: View {
     @Binding var data: DailyScrum.Data
-    @State private var newAttendee = ""
+    @State private var newAttendeeName = ""
     
     var body: some View {
         Form {
@@ -19,9 +19,9 @@ struct DetailEditView: View {
                         Text("Length")
                     }
                     .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
-                    .accessibilityHidden(true)
                     Spacer()
                     Text("\(Int(data.lengthInMinutes)) minutes")
+                        .accessibilityHidden(true)
                 }
                 ThemePicker(selection: $data.theme)
             }
@@ -31,22 +31,21 @@ struct DetailEditView: View {
                 }
                 .onDelete { indices in
                     data.attendees.remove(atOffsets: indices)
-                    }
+                }
                 HStack {
-                    TextField("names", text: $newAttendee)
-                }
-                Button(action: {
-                    withAnimation {
-                        let attendee = DailyScrum.Attendee(name: newAttendee)
-                        data.attendees.append(attendee)
-                        newAttendee = ""
+                    TextField("New Attendee", text: $newAttendeeName)
+                    Button(action: {
+                        withAnimation {
+                            let attendee = DailyScrum.Attendee(name: newAttendeeName)
+                            data.attendees.append(attendee)
+                            newAttendeeName = ""
+                        }
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .accessibilityLabel("Add attendee")
                     }
-                }) {
-
-                    Image(systemName: "plus.circle.fill")
-                        .accessibilityLabel("add attendee")
+                    .disabled(newAttendeeName.isEmpty)
                 }
-                .disabled(newAttendee.isEmpty)
             }
         }
     }
