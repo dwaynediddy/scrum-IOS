@@ -13,12 +13,13 @@ class ScrumStore: ObservableObject {
     
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
-                                    in: .userDomainMask,
-                                    appropriateFor: nil,
-                                    create: false)
-            .appendingPathComponent("scrum.data")
+                                       in: .userDomainMask,
+                                       appropriateFor: nil,
+                                       create: false)
+            .appendingPathComponent("scrums.data")
     }
-    static func load(completion: @escaping (Result<[DailyScrum], Error>) -> Void) {
+    
+    static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let fileURL = try fileURL()
@@ -39,12 +40,13 @@ class ScrumStore: ObservableObject {
             }
         }
     }
-    static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>) -> Void) {
+    
+    static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let data = try JSONEncoder().encode(scrums)
-                let outFile = try fileURL()
-                try data.write(to: outFile)
+                let outfile = try fileURL()
+                try data.write(to: outfile)
                 DispatchQueue.main.async {
                     completion(.success(scrums.count))
                 }
@@ -52,9 +54,7 @@ class ScrumStore: ObservableObject {
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
-                
             }
         }
     }
-    
 }
